@@ -1,0 +1,64 @@
+package pbo2;
+
+public class Mahasiswa {
+	String[] nama, nim;
+	char[] grade;
+	int[] nilai;
+	boolean[] status;
+	public void setMhs(String[] nama, String[] nim, char[] grade, int[] nilai, boolean[] status){
+	    this.nama = nama;
+	    this.nim = nim;
+	    this.nilai = nilai;
+	    this.grade = grade;
+	    this.status = status;
+	}
+	public int jmlLulus(boolean lulus){
+	    int a = 0;
+	    for(int i = 0; i < status.length; i++){
+		if(status[i] == lulus){
+		    a++;
+		}
+	    }
+	    return a;
+	}
+	public void mhsLulus(boolean lulus){
+	    System.out.print(" yaitu ");
+	    for(int i = 0; i < status.length; i++){
+		if(status[i] == lulus){
+		    System.out.print(nama[i] + " ");
+		}
+	    }
+	    System.out.println("\n");
+	}
+	public int jmlNilai(char a){
+	    int b = 0;
+	    for(int i = 0; i < grade.length; i++){
+		if(grade[i] == a){
+		    b++;
+		}
+	    }
+	    return b;
+	}
+	public void mhsNilai(char a){
+	    System.out.print(" yaitu ");
+	    for(int i = 0; i < grade.length; i++){
+		if(grade[i] == a){
+		    System.out.print(nama[i] + " ");
+		}
+	    }
+	    System.out.println("\n");
+	}
+	public void mhsRata(){
+	    System.out.print("Rata-rata nilai mahasiswa : ");
+	    int b = nilai.length;
+	    int a = 0;
+	    for(int i = 0; i < nilai.length; i++){
+		a += nilai[i];
+		System.out.print(nilai[i]);
+		if(i != nilai.length - 1){
+		    System.out.print("+");
+		}
+	    }
+	    System.out.print(" / " + b + " = " + (float) a / b);
+	}
+    }
